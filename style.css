@@ -1,0 +1,31 @@
+:root { --primary: #4F46E5; --secondary: #4338CA; --success: #10B981; --danger: #EF4444; --bg-light: #F8FAFC; --glass-bg: rgba(255, 255, 255, 0.85); --glass-border: rgba(255, 255, 255, 0.4); --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1); }
+body { font-family: 'Noto Sans JP', sans-serif; background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%); margin: 0; padding: 0; color: #1E293B; min-height: 100vh; }
+header { background: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+h1 { margin: 0; font-size: 1.25rem; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
+.admin-link { font-size: 0.9rem; color: #64748B; text-decoration: underline; cursor: pointer; }
+.tabs { display: flex; justify-content: center; gap: 1rem; padding: 2rem 1rem 1rem; }
+.tab-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.75rem 2.5rem; border-radius: 9999px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: var(--shadow); transition: all 0.3s ease; color: #64748B; }
+.tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4); }
+.container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem 3rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+.card { background: var(--glass-bg); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: 1rem; padding: 1.5rem; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+.status-badge { position: absolute; top: 1.25rem; right: 1.25rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+.status-available { background: #D1FAE5; color: #065F46; border: 1px solid #34D399; }
+.status-in-use { background: #FEE2E2; color: #991B1B; border: 1px solid #F87171; }
+.card-title { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem 0; }
+.card-info { font-size: 0.9rem; color: #475569; margin-bottom: 1.5rem; line-height: 1.5; min-height: 3rem; }
+.action-btn { width: 100%; padding: 0.875rem; border: none; border-radius: 0.75rem; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.btn-scan { background: var(--primary); color: white; }
+.btn-return { background: white; color: var(--danger); border: 2px solid var(--danger); }
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); display: none; justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content { background: white; border-radius: 1.25rem; padding: 2rem; width: 90%; max-width: 420px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); transform: scale(0.95); transition: all 0.3s ease; }
+.modal-overlay.active .modal-content { transform: scale(1); }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; font-size: 0.9rem; }
+.form-control { width: 100%; padding: 0.75rem 1rem; border: 2px solid #E2E8F0; border-radius: 0.5rem; box-sizing: border-box; font-size: 1rem; }
+.checkbox-wrapper { display: flex; align-items: flex-start; gap: 0.75rem; background: #FEF2F2; padding: 1rem; border-radius: 0.5rem; border: 1px solid #FCA5A5; }
+.checkbox-wrapper input[type="checkbox"] { width: 1.5rem; height: 1.5rem; accent-color: var(--danger); cursor: pointer; }
+.btn-group { display: flex; gap: 1rem; margin-top: 2rem; }
+.btn-cancel { flex: 1; padding: 0.875rem; background: #F1F5F9; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 700; color: #475569; }
+.btn-submit { flex: 1; padding: 0.875rem; background: var(--primary); border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 700; color: white; }

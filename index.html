@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スマート貸出管理</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🔑 スマート貸出管理</h1>
+        <a href="admin.html" class="admin-link">管理者メニュー</a>
+    </header>
+    
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="rooms">会議室</button>
+        <button class="tab-btn" data-tab="vehicles">車両</button>
+    </div>
+
+    <div class="container" id="mainContainer">
+        <div style="text-align:center; padding: 2rem;">読み込み中...</div>
+    </div>
+
+    <!-- 貸出・返却モーダル -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content">
+            <h2 id="modalTitle" style="margin-top: 0; color: var(--primary);">貸出の手続き</h2>
+            <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">※入力した所属と名前はスマホに記憶され、次回から自動入力されます。</p>
+            
+            <div class="form-group">
+                <label>所属</label>
+                <input type="text" class="form-control" id="deptInput" placeholder="例: 総務課">
+            </div>
+            <div class="form-group">
+                <label>氏名</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="例: 常盤 太郎">
+            </div>
+
+            <div id="vehicleFields" style="display: none;">
+                <div class="form-group checkbox-wrapper">
+                    <input type="checkbox" id="alcoholCheck">
+                    <label for="alcoholCheck" style="margin:0; color: #991B1B; cursor: pointer;">【必須】アルコールチェックを実施し、問題ないことを確認しました</label>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-cancel" id="btnCancel">キャンセル</button>
+                <button class="btn-submit" id="btnSubmit">貸出確定</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

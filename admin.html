@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者ダッシュボード | スマート貸出管理</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header style="background: #1E293B; border-bottom: none;">
+        <h1 style="color: white;">⚙️ 管理者ダッシュボード</h1>
+        <a href="index.html" class="admin-link" style="color: #CBD5E1;">⬅ アプリに戻る</a>
+    </header>
+
+    <div class="container" style="max-width: 900px; margin-top: 2rem;">
+        <div class="card" style="margin-bottom: 2rem;">
+            <h2>📊 貸出履歴データ</h2>
+            <p style="color: #64748B;">最新の貸出・返却履歴をCSV形式でダウンロードできます。（Excelで開けます）</p>
+            <button class="action-btn btn-scan" id="downloadCsvBtn" style="max-width: 300px; margin-top: 1rem;">⬇️ CSVダウンロード</button>
+        </div>
+
+        <div class="card">
+            <h2>📱 QRコード生成用URL一覧</h2>
+            <p style="color: #64748B;">以下のURLをQRコード作成サイトで変換し、対象の鍵に貼り付けてください。<br>スマホで読み込むと、直接その鍵の貸出画面が開きます。</p>
+            <div id="qrList" style="margin-top: 1rem; overflow-wrap: break-word; font-size: 0.95rem;">
+                <!-- JS will render links here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
