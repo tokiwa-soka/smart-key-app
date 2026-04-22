@@ -1,12 +1,20 @@
-// 【将来的な拡張用】Google Apps ScriptのURL（現状は空でOK。空の場合はスマホ内保存モードになります）
+// 【重要】Google Apps Scriptをデプロイしたら、そのURLをここに貼り付けてください。
+// 例: const GAS_URL = "https://script.google.com/a/macros/soka-u.jp/s/AKfycby_h3NI0n2SpUUAhtAAj5GmyRtEnoRLYOZYh4d_bO2E99KhzzsVpBt-WKME5YAGoMtt/exec";
+// 空のままだとローカル（スマホ本体）にのみデータが保存されます。
 const GAS_URL = ""; 
 
-// 貸出アイテムのリスト（必要に応じて追加・変更してください）
+// 貸出アイテムのリスト（ご指定のリストに更新済み）
 const ITEMS = [
-    { id: "room1", type: "room", name: "第1会議室", info: "定員: 10名" },
-    { id: "room2", type: "room", name: "第2会議室", info: "定員: 8名" },
-    { id: "room3", type: "room", name: "大会議室A", info: "定員: 50名" },
-    { id: "car1", type: "vehicle", name: "1号車 (プリウス)", info: "品川 500 あ 1234" },
-    { id: "car2", type: "vehicle", name: "2号車 (ノート)", info: "品川 500 い 5678" },
-    { id: "car3", type: "vehicle", name: "3号車 (ステップワゴン)", info: "品川 300 う 9012" }
+    { id: "room1", type: "room", name: "第1会議室", info: "" },
+    { id: "room2A", type: "room", name: "第2会議室A", info: "" },
+    { id: "room2B", type: "room", name: "第2会議室B", info: "" },
+    { id: "room2C", type: "room", name: "第2会議室C", info: "" },
+    { id: "room8", type: "room", name: "第8会議室", info: "" },
+    { id: "room9", type: "room", name: "第9会議室", info: "" },
+    { id: "room10", type: "room", name: "第10会議室", info: "" },
+    { id: "recep1", type: "room", name: "第1応接", info: "" },
+    { id: "recep2", type: "room", name: "第2応接", info: "" },
+    { id: "recep3", type: "room", name: "第3応接", info: "" },
+    { id: "recep4", type: "room", name: "第4応接", info: "" },
+    { id: "gakuji_car", type: "vehicle", name: "学事車両", info: "※アルコールチェック必須" }
 ];

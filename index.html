@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スマート貸出管理</title>
+    <title>鍵貸し出し管理</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>🔑 スマート貸出管理</h1>
-        <a href="admin.html" class="admin-link">管理者メニュー</a>
+        <h1>🔑 鍵貸し出し管理</h1>
+        <a href="#" onclick="checkAdminPassword(event)" class="admin-link">管理者メニュー</a>
     </header>
     
     <div class="tabs">
@@ -36,6 +36,10 @@
                 <label>氏名</label>
                 <input type="text" class="form-control" id="nameInput" placeholder="例: 常盤 太郎">
             </div>
+            <div class="form-group">
+                <label>返却予定時間</label>
+                <input type="time" class="form-control" id="returnTimeInput">
+            </div>
 
             <div id="vehicleFields" style="display: none;">
                 <div class="form-group checkbox-wrapper">
@@ -47,6 +51,26 @@
             <div class="btn-group">
                 <button class="btn-cancel" id="btnCancel">キャンセル</button>
                 <button class="btn-submit" id="btnSubmit">貸出確定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 返却モーダル -->
+    <div class="modal-overlay" id="returnModal">
+        <div class="modal-content">
+            <h2 style="margin-top: 0; color: var(--primary);">返却の手続き</h2>
+            <p id="returnModalDesc" style="margin-bottom: 1.5rem; font-weight: 500;">○○の鍵の返却処理を行いますか？</p>
+            
+            <div id="returnVehicleFields" style="display: none;">
+                <div class="form-group checkbox-wrapper">
+                    <input type="checkbox" id="accidentCheck">
+                    <label for="accidentCheck" style="margin:0; color: #991B1B; cursor: pointer;">【必須】事故や車両の損傷等がないことを確認しました</label>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-cancel" onclick="closeReturnModal()">キャンセル</button>
+                <button class="btn-submit" id="btnReturnSubmit" onclick="submitReturn()">返却確定</button>
             </div>
         </div>
     </div>
