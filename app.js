@@ -94,9 +94,13 @@ async function saveStateToCloud(itemId, status, action, itemName, dept, name, re
             returnTime: returnTime
         };
         try {
-            // text/plainとして送信することでCORSエラーを回避しつつGASにJSONを渡す
+            // mode: 'no-cors'を指定することで、GAS特有のリダイレクトによるCORSエラーを防ぎます
             await fetch(GAS_URL, {
                 method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
                 body: JSON.stringify(payload)
             });
         } catch(e) {
