@@ -6,6 +6,16 @@ let currentItemsState = {};
 let selectedItemForCheckout = null;
 let selectedItemForReturn = null;
 
+function formatDateTime(datetimeStr) {
+    if (!datetimeStr) return '未定';
+    if (datetimeStr.includes('T')) {
+        const [date, time] = datetimeStr.split('T');
+        const [yyyy, mm, dd] = date.split('-');
+        return `${mm}/${dd} ${time}`;
+    }
+    return datetimeStr;
+}
+
 function checkAdminPassword(e) {
     e.preventDefault();
     const pw = prompt('管理者パスワードを入力してください:');
@@ -129,7 +139,7 @@ function renderCards(tabType) {
                 <h3 class="card-title">${item.name}</h3>
                 <div class="card-info">
                     ${item.info}<br>
-                    ${!isAvailable ? `<strong style="color:#B91C1C; display:block; margin-top:0.5rem;">${state.dept} ${state.name} さんが利用中<br>（返却予定: ${state.returnTime || '未定'}）</strong>` : ''}
+                    ${!isAvailable ? `<strong style="color:#B91C1C; display:block; margin-top:0.5rem;">${state.dept} ${state.name} さんが利用中<br>（返却予定: ${formatDateTime(state.returnTime)}）</strong>` : ''}
                 </div>
                 ${isAvailable 
                     ? `<button class="action-btn btn-scan" onclick="openModal('${item.id}')">📱 鍵を借りる</button>` 
