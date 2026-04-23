@@ -1,7 +1,7 @@
 // 【重要】Google Apps Scriptをデプロイしたら、そのURLをここに貼り付けてください。
-// 例: const GAS_URL = "https://script.google.com/a/macros/soka-u.jp/s/AKfycby_h3NI0n2SpUUAhtAAj5GmyRtEnoRLYOZYh4d_bO2E99KhzzsVpBt-WKME5YAGoMtt/exec";
+// 例: const GAS_URL = "";
 // 空のままだとローカル（スマホ本体）にのみデータが保存されます。
-const GAS_URL = "https://script.google.com/a/macros/soka-u.jp/s/AKfycbx2gWr4zbs9zNI-6RZ9wb-NpEXSGTcTIcFR0XeDQLx0JITwi7pybEGkO2XvAx0bMY6X_Q/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwk15H1dX88SpVXTkRn6bYO-pzbD6nHmaxtE4a9VCyrm3sWBTErxlz9U9JJWbuPKxijKQ/exec";
 
 // 貸出アイテムのリスト（ご指定のリストに更新済み）
 const ITEMS = [
