@@ -1,7 +1,7 @@
 // 【重要】Google Apps Scriptをデプロイしたら、そのURLをここに貼り付けてください。
 // 例: const GAS_URL = "";
 // 空のままだとローカル（スマホ本体）にのみデータが保存されます。
-const GAS_URL = "https://script.google.com/macros/s/AKfycbwk15H1dX88SpVXTkRn6bYO-pzbD6nHmaxtE4a9VCyrm3sWBTErxlz9U9JJWbuPKxijKQ/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbx7-BL6jAkkZOh4DUEG5VRMaNpEg7XT7VZzeSjTDegXVgX0lMYAPshkn1C74PMLntJ6PA/exec";
 
 // 貸出アイテムのリスト（ご指定のリストに更新済み）
 const ITEMS = [
